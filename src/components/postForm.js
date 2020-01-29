@@ -26,7 +26,7 @@ class postForm extends Component {
                 <br />
                 <div>
                     <img className="avatar" src={this.props.user.avatar} alt="" />
-                    <textarea id="post" value={this.state.content} onChange={e => this.onChange(e.target.value)} placeholder="what's no your mind?" />
+                    <textarea id="post" value={this.state.content} onChange={e => this.onChange(e.target.value)} placeholder="what's on your mind?" />
                 </div>
                 <button className="btn" onClick={() => { this.onClick() }}>Post</button>
             </div>
