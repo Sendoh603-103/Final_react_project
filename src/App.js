@@ -4,6 +4,17 @@ import PostForm from './components/postForm';
 import Post from './components/post';
 import NavBar from './components/navBar'
 
+//Actually there are three components in my final assigment they are PostForm, Post, and NavBar. 
+//However, if you do not fire the function posts that creates the post in the website , maybe 
+//just two components
+//The every basic component is App, each component is unber that one
+//First I set up the parent state, that means the component App is the parent, then
+//I set up a object called posts, which is used to post the static website - the webstie is loaded 
+//first time
+//There are 7 functions I made that used to achieve some function, and the funciton is like each name of 
+//the function, I set up them all in the parent component, that means in the App component
+//I pass throught reset the object display in the state to achieve all the function of website
+
 class App extends Component {
 
   constructor() {
@@ -323,7 +334,8 @@ class App extends Component {
   }
 
 
-
+//This part is for combining all the components, if there is a Posts function fired, the Post component will be displayed and 
+//The Post component is actually a commemt for that post in the website
 
   render () {
     const Posts = () => {
