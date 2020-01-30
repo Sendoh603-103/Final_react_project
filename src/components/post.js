@@ -1,49 +1,58 @@
 import React, { Component } from 'react';
 import './post.css'
 
+//This part is for handling the content of comment, I can get the content of comment from the postForm component
+//through parent component
+//There are two compoents in this Post component, I need to handle the emoji and collapse, I made it into two functions
+//Because we do not need to them everytime, we just want them in certain time, this is why I made the two components as
+//functions
+//Only if the collapse is ture, the comment will be displayed, the first thing is to make ture if the collapse is ture
+//and then execute other instructions
+
 class Post extends Component {
   state = {
-      content: ""
+    content: ""
   }
 
   onChange (value) {
-      this.setState({
-          content: value
-      })
+    this.setState({
+        content: value
+    })
   }
 
   doClick (post) {
-      console.log(this.state.content);
-      this.props.doComment(post, this.state.content);
+    console.log(this.state.content);
+    this.props.doComment(post, this.state.content);
   }
 
   getTime (unixtime) {
-      var u = new Date(unixtime);
-      return (u.getMonth() + 1) + "-" + u.getDate() + "-" + u.getFullYear() + " "
-          + u.getHours() + ":" + u.getMinutes() + ":" + u.getSeconds()
+    var u = new Date(unixtime);
+    return (u.getMonth() + 1) + "-" + u.getDate() + "-" + u.getFullYear() + " "
+        + u.getHours() + ":" + u.getMinutes() + ":" + u.getSeconds()
   };
 
   render () {
-      const Comments = (post) => {
-          // console.log(post.post)
-          if (post.post.collapse) {
-              return (<div>
-                  {
-                      post.post.comments.map((comment) => {
-                          return (<div className="comment">
-                              <img className="avatar" src={comment.author.avatar} alt="" />
-                              <div className="content"><span className="author"><strong>{comment.author.username}</strong></span>:{comment.content}</div>
-                          </div>)
-                      })
-                  }
-              </div>)
-          } else {
-              return (<div></div>)
-          }
-      }
+    const Comments = (post) => {
+      // console.log(post.post)
+      if (post.post.collapse) {
+        return (
+        <div>
+          {
+            post.post.comments.map((comment) => {
+              return (<div className="comment">
+                <img className="avatar" src={comment.author.avatar} alt="" />
+                  <div className="content"><span className="author"><strong>{comment.author.username}</strong></span>:{comment.content}</div>
+                  </div>)
+              })
+            }
+        </div>)
+      } else {
+        return (<div></div>)
+    }
+  }
       const Emoji = (post) => {
           if (post.post.tags.length > 0) {
-              return (<span>
+            return (<span>
                   {
                       post.post.tags.map((e, index) => {
                           if (e === 1) {
