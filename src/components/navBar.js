@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './navBar.css'
 
+//There are four dropdown-content in this component, it just need to call three functions in parent
+//component
+//There is a User function in this component to choose the user
+
 class NavBar extends Component {
 
   state = {
