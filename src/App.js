@@ -4,6 +4,7 @@ import PostForm from './components/postForm';
 import Post from './components/post';
 import NavBar from './components/navBar'
 
+//The function I chose is 1, 2, 4, 7, 9.
 //Actually there are three components in my final assigment they are PostForm, Post, and NavBar. 
 //However, if you do not fire the function posts that creates the post in the website , maybe 
 //just two components
