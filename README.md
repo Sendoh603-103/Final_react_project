@@ -17,3 +17,5 @@ d. Change sorting options (if implemented)
 # USER can sort posts by most recent, oldest, or most popular (based on likes)
 
 # USER can filter posts by posts the current user has/has not liked.
+
+# Update the README for test
